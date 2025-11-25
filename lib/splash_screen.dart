@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project_1/login_screen.dart';
 import 'package:project_1/widgets/logo_text.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(
+      Duration(seconds: 3),
+      () => Navigator.of(
+        context,
+      ).push(MaterialPageRoute(builder: (context) => LoginScreen())),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
