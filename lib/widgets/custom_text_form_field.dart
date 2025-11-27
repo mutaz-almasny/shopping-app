@@ -6,17 +6,20 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.hint,
-    required this.icon,
+    required this.icon, required this.validator,
   });
 
   final TextEditingController controller;
   final String hint;
   final IconData icon;
+  final Function(String) validator;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 70,
+      padding: EdgeInsets.symmetric(horizontal: 40),
+
       child: TextFormField(
         controller: controller,
         textAlignVertical: TextAlignVertical.center,

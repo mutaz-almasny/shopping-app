@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/login_screen.dart';
+import 'package:project_1/signup_screen.dart';
 import 'package:project_1/splash_screen.dart';
 
 void main() {
@@ -12,9 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Shopping App',
+      routes: {
+        "login": (context) => LoginScreen(),
+        "signup": (context) => SignupScreen(),
+      },
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       home: SplashScreen(),
     );
   }
